@@ -1,0 +1,6 @@
+{
+  "name": "Traffic Racer Game",
+  "description": "Fast-paced browser car racing arcade game with keyboard and touch controls, oncoming traffic obstacles, and dynamic score tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

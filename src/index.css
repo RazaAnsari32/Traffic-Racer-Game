@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+@layer base {
+  @font-face {
+    font-family: 'WaltographRegular';
+    src: url('https://fontlibrary.org/face/waltograph') format('woff');
+    font-display: swap;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+.font-mono-numbers {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-waltograph {
+  font-family: 'WaltographRegular', cursive, sans-serif;
+}
+
+/* Authentic Asphalt Road Surface */
+.asphalt-surface {
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 100%),
+    linear-gradient(180deg, #1f2327 0%, #171a1d 50%, #1f2327 100%);
+  background-color: #1a1d20;
+}
+
+/* Road Side Rumble Strip (Alternating Red and White Curbs) */
+.rumble-curb-left {
+  background: repeating-linear-gradient(
+    180deg,
+    #ef4444 0px,
+    #ef4444 24px,
+    #f8fafc 24px,
+    #f8fafc 48px
+  );
+  box-shadow: inset -2px 0 5px rgba(0, 0, 0, 0.4), 2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.rumble-curb-right {
+  background: repeating-linear-gradient(
+    180deg,
+    #f8fafc 0px,
+    #f8fafc 24px,
+    #ef4444 24px,
+    #ef4444 48px
+  );
+  box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.4), -2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Road Lane Divider Lines matching original #line_1, #line_2, #line_3 */
+.line {
+  position: absolute;
+  height: 140px;
+  width: 6px;
+  left: calc(50% - 3px);
+  background-color: #fef08a;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(254, 240, 138, 0.6), 0 0 20px rgba(254, 240, 138, 0.2);
+}
+
+/* Road Outer Solid White Shoulder Lines */
+.shoulder-line-left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 18px;
+  width: 4px;
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.shoulder-line-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 18px;
+  width: 4px;
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Vehicle Components matching authentic DOM classes */
+.car {
+  position: absolute;
+  height: 64px;
+  width: 42px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  transition: transform 0.08s ease-out;
+}
+
+.f_glass {
+  position: absolute;
+  height: 22%;
+  width: 68%;
+  margin-left: 16%;
+  top: 14%;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.b_glass {
+  position: absolute;
+  height: 18%;
+  width: 68%;
+  margin-left: 16%;
+  bottom: 15%;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(180deg, #0284c7 0%, #1e293b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.f_light_l {
+  position: absolute;
+  height: 12%;
+  width: 22%;
+  left: 8%;
+  top: -5%;
+  border-radius: 4px 4px 0 0;
+  background-color: #fef08a;
+  box-shadow: 0 0 12px #fde047, 0 0 4px #ffffff;
+}
+
+.f_light_r {
+  position: absolute;
+  height: 12%;
+  width: 22%;
+  right: 8%;
+  top: -5%;
+  border-radius: 4px 4px 0 0;
+  background-color: #fef08a;
+  box-shadow: 0 0 12px #fde047, 0 0 4px #ffffff;
+}
+
+.b_light_l {
+  position: absolute;
+  height: 8%;
+  width: 20%;
+  left: 8%;
+  bottom: -4%;
+  border-radius: 0 0 4px 4px;
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.b_light_r {
+  position: absolute;
+  height: 8%;
+  width: 20%;
+  right: 8%;
+  bottom: -4%;
+  border-radius: 0 0 4px 4px;
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.f_tyre_l {
+  position: absolute;
+  height: 22%;
+  width: 12%;
+  background-color: #0f172a;
+  top: 18%;
+  left: -12%;
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.f_tyre_r {
+  position: absolute;
+  height: 22%;
+  width: 12%;
+  background-color: #0f172a;
+  top: 18%;
+  right: -12%;
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset -1px 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.b_tyre_l {
+  position: absolute;
+  height: 22%;
+  width: 12%;
+  background-color: #0f172a;
+  bottom: 18%;
+  left: -12%;
+  border-radius: 4px 0 0 4px;
+  box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.b_tyre_r {
+  position: absolute;
+  height: 22%;
+  width: 12%;
+  background-color: #0f172a;
+  bottom: 18%;
+  right: -12%;
+  border-radius: 0 4px 4px 0;
+  box-shadow: inset -1px 0 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Headlight Projector Light Cones */
+.headlight-cone {
+  position: absolute;
+  top: -110px;
+  left: -35px;
+  width: 112px;
+  height: 120px;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(254, 240, 138, 0.55) 0%,
+    rgba(254, 240, 138, 0.15) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 6;
+  clip-path: polygon(25% 100%, 75% 100%, 100% 0%, 0% 0%);
+}
+
+/* Tail Light Red Flare */
+.taillight-flare {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(239, 68, 68, 0.45) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Subtle speed particle animations */
+@keyframes speedStreak {
+  0% { transform: translateY(-50px); opacity: 0; }
+  30% { opacity: 0.6; }
+  100% { transform: translateY(640px); opacity: 0; }
+}
+
+.speed-streak {
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  animation: speedStreak 0.5s linear infinite;
+  pointer-events: none;
+}
